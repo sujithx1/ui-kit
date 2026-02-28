@@ -1,4 +1,4 @@
-// theme/system.ts
+  // theme/system.ts
 import { createSystem, defineConfig } from "@chakra-ui/react";
 
 const config = defineConfig({
