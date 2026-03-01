@@ -1,6 +1,6 @@
 import {
   Table,
-  Spinner,
+//   Spinner,
   Center,
   Text,
   Box,
@@ -8,13 +8,16 @@ import {
   Skeleton,
   VStack,
   IconButton,
-  Input,
-  InputGroup,
-  InputElement,
-  Select,
+//   Input,
+//   InputGroup,
+//   InputElement,
+//   Select,
   Badge,
+  InputGroup,
+  Input,
+  
 } from "@chakra-ui/react";
-import { LuSearch, LuChevronLeft, LuChevronRight } from "react-icons/lu";
+import { LuChevronLeft, LuChevronRight, LuSearch } from "react-icons/lu";
 import React, { useMemo, useState } from "react";
 
 export type Column<T> = {
@@ -136,21 +139,25 @@ export function ReusableTable<T>({
         </Text>
 
       
-        {/* {enableSearch && (
-          <InputGroup maxW="260px" size="sm">
-            <Input
-              placeholder="Search..."
-              ps="8"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              bg="gray.50"
-              borderRadius="lg"
-            />
-            <InputElement placement="start" pointerEvents="none">
-              <LuSearch size={16} />
-            </InputElement>
-          </InputGroup>
-        )} */}
+       {enableSearch && (
+  <InputGroup 
+    flex="1" 
+    maxW="260px" 
+    startElement={<LuSearch size={16} color="gray" />}
+  >
+    <Input
+      placeholder="Search..."
+      size="sm"
+      value={search}
+      onChange={(e) => setSearch(e.target.value)}
+      bg="gray.50"
+      _dark={{ bg: "whiteAlpha.50" }}
+      borderRadius="lg"
+      border="1px solid"
+      borderColor="gray.200"
+    />
+  </InputGroup>
+)}
       </HStack>
 
       {/* 📭 Empty */}
